@@ -2,7 +2,7 @@ body{
 margin:0;
 font-family:'Segoe UI', sans-serif;
 
-/* 🌈 Animated gradient background */
+/* 🌈 Animated background */
 background: linear-gradient(-45deg,#c7d2fe,#bae6fd,#f0f9ff,#dbeafe);
 background-size: 400% 400%;
 animation: gradientMove 10s ease infinite;
@@ -13,7 +13,7 @@ flex-direction:column;
 min-height:100vh;
 }
 
-/* 🌈 BACKGROUND ANIMATION */
+/* BACKGROUND ANIMATION */
 @keyframes gradientMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
@@ -27,7 +27,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-background: rgba(255,255,255,0.6);
+background: rgba(255,255,255,0.7);
 backdrop-filter: blur(10px);
 
 box-shadow:0 4px 20px rgba(0,0,0,0.08);
@@ -44,7 +44,6 @@ gap:5px;
 
 .download{
 background: linear-gradient(90deg,#2563eb,#06b6d4);
-background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
@@ -53,7 +52,13 @@ background-clip: text;
 color:#f59e0b;
 }
 
-/* MAIN */
+/* TAGLINE */
+.tagline{
+font-size:14px;
+color:#334155;
+}
+
+/* MAIN SECTION */
 .main{
 flex:1;
 display:flex;
@@ -61,29 +66,37 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+
+/* DESKTOP PADDING */
 padding:60px 20px;
 }
 
 /* TITLE */
 h1{
 margin-bottom:25px;
-animation: fadeIn 1s ease;
+font-size:32px;
 }
 
-/* GLASS CARD */
+/* CARD */
 .box{
 width:100%;
 max-width:400px;
 padding:30px;
 border-radius:16px;
 
+/* GLASS */
 background: rgba(255,255,255,0.4);
 backdrop-filter: blur(15px);
 
 border:1px solid rgba(255,255,255,0.3);
 box-shadow:0 20px 40px rgba(0,0,0,0.1);
 
-animation: fadeUp 1s ease;
+transition:0.3s;
+}
+
+.box:hover{
+transform:translateY(-5px);
+box-shadow:0 25px 50px rgba(0,0,0,0.15);
 }
 
 /* INPUT */
@@ -94,9 +107,10 @@ margin-top:10px;
 border-radius:8px;
 border:1px solid rgba(255,255,255,0.4);
 background: rgba(255,255,255,0.7);
+font-size:14px;
 }
 
-/* 🔥 GLOW BUTTON */
+/* BUTTON */
 button{
 margin-top:10px;
 padding:12px;
@@ -106,23 +120,20 @@ border-radius:8px;
 cursor:pointer;
 color:white;
 font-weight:bold;
+font-size:14px;
 
-/* 🌈 Gradient */
 background: linear-gradient(90deg,#0ea5e9,#2563eb);
-
-/* 🔥 Glow */
 box-shadow:0 5px 15px rgba(14,165,233,0.5);
 
 transition:0.3s;
 }
 
-/* HOVER GLOW */
 button:hover{
 transform:translateY(-2px);
 box-shadow:0 10px 25px rgba(14,165,233,0.7);
 }
 
-/* RESULT */
+/* RESULT TEXT */
 #result{
 margin-top:10px;
 font-size:14px;
@@ -135,34 +146,70 @@ text-align:center;
 font-size:14px;
 color:#334155;
 
-background: rgba(255,255,255,0.6);
+background: rgba(255,255,255,0.7);
 backdrop-filter: blur(10px);
 
 box-shadow:0 -4px 20px rgba(0,0,0,0.08);
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+/* ========================= */
+/* 📱 MOBILE OPTIMIZATION */
+/* ========================= */
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-/* MOBILE */
 @media(max-width:500px){
+
+/* HEADER FIX */
 .header{
 flex-direction:column;
 gap:5px;
 text-align:center;
+padding:10px;
 }
+
+/* LOGO SMALL */
+.logo{
+font-size:18px;
+}
+
+/* TAGLINE SMALL */
+.tagline{
+font-size:12px;
+}
+
+/* MAIN FIX */
+.main{
+padding:30px 15px;
+}
+
+/* TITLE FIX */
+h1{
+font-size:22px;
+margin-bottom:15px;
+}
+
+/* CARD FIX */
+.box{
+max-width:350px;
+padding:20px;
+border-radius:14px;
+}
+
+/* INPUT */
+input{
+font-size:13px;
+padding:10px;
+}
+
+/* BUTTON */
+button{
+font-size:13px;
+padding:10px;
+}
+
+/* FOOTER */
+.footer{
+font-size:12px;
+padding:8px;
+}
+
 }
