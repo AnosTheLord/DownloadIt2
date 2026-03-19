@@ -36,7 +36,7 @@ def download():
 
     # 🔥 FIX: NO FFMPEG NEEDED
     ydl_opts = {
-        best[ext=mp4]/best,   # ✅ single file (no merge)
+        'format': 'best[ext=mp4]/best',   # ✅ single file (no merge)
         'outtmpl': output
     }
 
